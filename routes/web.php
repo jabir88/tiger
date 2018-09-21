@@ -1,0 +1,29 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+Auth::routes();
+Auth::routes(['verify' => true]);
+
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'WebsiteController@index')->name('');
+
+
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('verified');
+
+//  google Socialite
+Route::get('auth/google', 'ApiController@redirectToProviderGoogle');
+Route::get('auth/google/callback', 'ApiController@handleProviderCallbackGoogle');
+
+// after google verify email send
+Route::get('/auto/send', 'Auth\VerificationController@resend2');
