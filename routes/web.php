@@ -24,6 +24,3 @@ Route::get('/admin', 'AdminController@index')->name('admin')->middleware('verifi
 //  google Socialite
 Route::get('auth/google', 'ApiController@redirectToProviderGoogle');
 Route::get('auth/google/callback', 'ApiController@handleProviderCallbackGoogle');
-
-// after google verify email send
-Route::get('/auto/send', 'Auth\VerificationController@resend2');

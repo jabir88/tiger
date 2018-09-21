@@ -62,6 +62,18 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="form-group row my-3">
+                            <div class="col-md-6 offset-md-4">
+                              <div class="panel-body">
+                        <a href="{{ url('auth/google') }}" class="btn btn-lg btn-primary btn-block">
+
+                            <strong>Login With Google</strong>
+
+                          </a>
+                        </div>
+
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
